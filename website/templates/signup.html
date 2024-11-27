@@ -1,0 +1,46 @@
+{% extends 'forms.html' %}
+
+{% block title %} Register {% endblock %}
+
+{% block body %}
+
+<!-- Sign Up section start -->
+<style>
+    .f-t{
+    
+        text-align: center;
+    }
+
+</style>
+<section class="base" id="base-signup">
+    <div class="base-content">
+        <div class="form f-t">
+            <!-- <h3>
+                Create Account
+            </h3> -->
+            
+
+            <hr class="first">
+            <form method="POST">
+                {{ form.hidden_tag() }}
+
+                <div class="name">Name <br>{{ form.username }} <hr></div>
+                <div class="email">Email Address{{ form.email }} <hr> </div>
+                <div class="name">Mobile Number{{ form.mobile_number }} <hr> </div>
+                <div class="password">Password{{ form.password1 }} <hr></div>
+                <div class="password">Confirm Passowrd{{ form.password2 }} <hr></div>
+
+                <div class="buttons">
+                    <!-- <a href="/login"> Login</a> -->
+                    {{ form.submit() }}
+                </div>
+                <div class="mt-4"><span>Already had a account?</span><a href="/login" style="text-decoration: none;">Login here</a></div>
+
+
+            </form>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

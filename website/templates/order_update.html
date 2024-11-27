@@ -1,0 +1,311 @@
+{% extends 'base.html' %}
+
+{% block title %} Update Order {% endblock %}
+
+
+{% block body %}
+
+<style>
+    .buttons {
+        margin-top: 10px;
+        margin-left: 10px;
+        font-size: 20px;
+        font-family: cursive;   
+        padding: 2px 20px;
+        text-decoration: none;
+        color: #fff;
+        background:#ec8530;
+        border: 2px solid #ec8530;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+    .buttons:hover{
+        background:#b35203;
+        border: 2px solid #b35203;
+    }
+
+    .list-group-item .col {
+        display: flex;
+        align-items: center;
+    }
+    
+    .list-group-item .text-center {
+        text-align: center;
+    }
+    
+    .list-group-item .text-left {
+        text-align: left;
+    }
+
+       
+</style>
+
+<div class="container my-8 ">
+    <div class="row justify-content-center">
+    
+
+        <h1 class="text-center mb-4 mt-3" style="color: black;">Booking Details</h1>
+        <div class="col-sm-8 mt-4">
+            <div class="card mx-auto">
+                <div class="card-body text-center">
+                    
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col justify-content-center">
+                            <img src=".{{ order.product.product_picture }}" alt="" style="height: 100px; width: 150px; border-radius: 10px; border: 2px solid black;">
+                        </div>
+                    </li>
+
+
+
+
+
+
+                    <hr>
+                    <h3 class="text-center mb-4" style="color: brown;font-size:25px;">Date & Time </h3>
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Date:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.date }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Time:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.time_slot }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Order Date:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.order_date}}
+                        </div>
+                    </li>
+
+
+
+
+
+
+                    <hr>
+                    <h3 class="text-center mb-4" style="color: brown;font-size:25px;">Customer </h3>
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Name:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.name }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Mobile Number:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.mobile_number }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Alternate Mobile Number:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.alternate_mobile_number }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Address:</strong></label></div>
+                        <div class="col text-center">
+                            <span>{{ order.address }}</span>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong></strong></label></div>
+                        <div class="col text-center">
+                            <span>{{order.locality}}, {{order.city}}, {{order.state}}-{{order.pincode}}</span>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Landmark:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.landmark }}
+                        </div>
+                    </li>
+
+
+
+
+
+                    <hr>
+                    <h3 class="text-center mb-4" style="color: brown;font-size:25px;">Pet</h3>
+                    
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Type of Pet:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.pet_type }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Breed:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.breed }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Gender:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.gender }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Age:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.age }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Size:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.size }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Aggression:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.aggression }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Vaccinated:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.vaccinated  }}
+                        </div>
+                    </li>
+
+
+
+
+
+
+
+
+                    <hr>
+                    <h3 class="text-center mb-4" style="color: brown;font-size:25px;">Pack </h3>                    
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Pack:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.product.product_name }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Price:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.price }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Quantity:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.quantity }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Payment:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.payment_id }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Order Status:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.status }}
+                        </div>
+                    </li>
+
+                    
+                    <form method="POST" >
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Update Order Status:</strong></label></div>
+                        <div class="col text-center">
+                                {{ form.hidden_tag() }}
+                
+                                {{ form.order_status }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong></strong></label></div>
+                        <div class="col text-center">                
+                               <div class="buttons">{{ form.update() }}</div>
+                        </div>
+                    </li>
+                    </form>
+
+<style>
+    .buttons {
+
+        font-size: 18px;
+        margin-left: 0px;
+        padding: 2px 3px; 
+        font-family: cursive;   
+        text-decoration: none;
+        color: #fff;
+        background:#ec8530;
+        border: 2px solid #ec8530;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+    .buttons:hover{
+        background:#b35203;
+        border: 2px solid #b35203;
+    }
+
+</style>
+
+
+                        <!-- <h3 class="text-center mb-4" style="color: black;">Pet Details</h3> -->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- 
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Order Status</th>
+            <th scope="col">Order Status</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <form action="" method="POST" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+
+                <td>{{ form.order_status }}</td>
+                <td>{{ form.update() }}</td>
+            </form>
+        </tr>
+    </tbody>
+</table> -->
+
+{% endblock %}

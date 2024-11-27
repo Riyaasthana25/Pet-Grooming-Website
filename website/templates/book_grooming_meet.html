@@ -1,0 +1,328 @@
+{% extends 'base.html' %}
+
+{% block title %}Book Groomer {% endblock %}
+
+
+{% block body %}
+
+<style>
+    .buttons {
+        margin-top: 10px;
+        margin-left: 10px;
+        font-size: 20px;
+        font-family: cursive;   
+        padding: 2px 20px;
+        text-decoration: none;
+        color: #fff;
+        background:#ec8530;
+        border: 2px solid #ec8530;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+    .buttons:hover{
+        background:#b35203;
+        border: 2px solid #b35203;
+    }
+
+    .list-group-item .col {
+        display: flex;
+        align-items: center;
+    }
+    
+    .list-group-item .text-center {
+        text-align: center;
+    }
+    
+    .list-group-item .text-left {
+        text-align: left;
+    }
+
+       
+</style>
+
+<div class="container my-8 ">
+    <div class="row justify-content-center">
+    
+
+        <!-- <h1 class="text-center mb-4" style="color: black;">Book Your Slot</h1> -->
+        <div class="col-sm-8 mt-4">
+            <div class="card mx-auto">
+                <div class="card-body text-center">
+
+                    {% if pet_form %}
+                        <!-- <h3 class="mb-4">Pet Details</h3> -->
+                        <h3 class="text-center mb-4" style="color: black;">Pet Details</h3>
+                        
+                        
+                        <form method="POST">
+                            {{ pet_form.hidden_tag() }}
+
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                    <div class="col text-left"> <label class="form-label"><strong>{{ pet_form.pet_type.label }}</strong></label></div>
+                                    <!-- <div class="col text-center radio-inline" >
+                                        {{ pet_form.pet_type }}
+                                    </div> -->
+                                    <div class="col">
+                                        {% for radio in pet_form.pet_type %}
+                                            <div class="form-check form-check-inline">
+                                                {{ radio }}
+                                                <label class="form-check-label" for="{{ radio.id }}">{{ radio.label.text }}</label>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                    <!-- <div class="col text-center">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input  border border-dark" type="radio" name="pet_type" id="cat_radio" value="cat">
+                                            <label class="form-check-label" for="cat_radio">Cat</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input  border border-dark" type="radio" name="pet_type" id="dog_radio" value="dog">
+                                            <label class="form-check-label" for="dog_radio">Dog</label>
+                                        </div>
+                                    </div> -->
+                                </li>
+
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                    <div class="col text-left"> <label class="form-label"><strong>{{ pet_form.breed.label }}</strong></label></div>
+                                    <div class="col text-center">
+                                        {{ pet_form.breed }}
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                    <div class="col text-left"><label class="form-label"><strong>{{ pet_form.gender.label }}</strong></label></div>
+                                    <!-- <div class="col text-center radio-inline">
+                                        {{ pet_form.gender }}
+                                    </div> -->
+                                    <div class="col">
+                                        {% for radio in pet_form.gender %}
+                                            <div class="form-check form-check-inline">
+                                                {{ radio }}
+                                                <label class="form-check-label" for="{{ radio.id }}">{{ radio.label.text }}</label>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                    <div class="col text-left"> <label class="form-label"><strong>{{ pet_form.size.label }}</strong></label></div>
+                                    <!-- <div class="col text-center">
+                                        {{ pet_form.size }}
+                                    </div> -->
+                                    <div class="col">
+                                        {% for radio in pet_form.size %}
+                                            <div class="form-check form-check-inline">
+                                                {{ radio }}
+                                                <label class="form-check-label" for="{{ radio.id }}">{{ radio.label.text }}</label>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                    <div class="col text-left"> <label class="form-label"><strong>{{ pet_form.aggression.label }}</strong></label></div>
+                                    <!-- <div class="col text-center">
+                                        {{ pet_form.aggression }}
+                                    </div> -->
+                                    <div class="col">
+                                        {% for radio in pet_form.aggression %}
+                                            <div class="form-check form-check-inline">
+                                                {{ radio }}
+                                                <label class="form-check-label" for="{{ radio.id }}">{{ radio.label.text }}</label>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                    <div class="col text-left"> <label class="form-label"><strong>{{ pet_form.vaccinated.label }}</strong></label></div>
+                                    <!-- <div class="col text-center">
+                                        {{ pet_form.aggression }}
+                                    </div> -->
+                                    <div class="col">
+                                        {% for radio in pet_form.vaccinated %}
+                                            <div class="form-check form-check-inline">
+                                                {{ radio }}
+                                                <label class="form-check-label" for="{{ radio.id }}">{{ radio.label.text }}</label>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                    <div class="col text-left"> <label class="form-label"><strong>{{ pet_form.age.label }}</strong></label></div>
+                                    <div class="col text_center">
+                                        {{ pet_form.age }}
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <!-- <button type="submit" class="btn btn-primary mt-4">Next</button> -->
+                            <div class="btn  mt-4 buttons">
+                                {{ pet_form.submit_pet_form }}
+                            </div>
+                        </form>
+
+
+
+
+
+
+
+
+                    {% elif address_form %}
+                    
+                        <h3 class="text-center mb-4" style="color: black;">Booking Details</h3>
+
+                        <form  method="POST">
+                            {{ address_form.hidden_tag() }}
+
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                    <div class="col text-left"><label class="form-label"><strong> {{ address_form.name.label }}</strong></label></div>
+                                    <div class="col text-center">
+                                        {{ address_form.name }}
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                    <div class="col text-left"> <label class="form-label"><strong>{{ address_form.mobile_number.label }}</strong></label></div>
+                                    <div class="col text-center">
+                                        {{ address_form.mobile_number }}
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                    <div class="col text-left"><label class="form-label"><strong>{{ address_form.pincode.label }}</strong></label></div>
+                                    <div class="col text-center">
+                                        {{ address_form.pincode }}
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                    <div class="col text-left">  <label class="form-label"><strong>{{ address_form.locality.label }}</strong></label></div>
+                                    <div class="col text-center">
+                                        {{ address_form.locality }}
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                   <div class="col text-left"> <label class="form-label"><strong>{{ address_form.address.label }}</strong></label></div>
+                                    <div class="col text-center">
+                                        {{ address_form.address }}
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                    <div class="col text-left">  <label class="form-label"><strong>{{ address_form.city.label }} </strong></label></div>
+                                    <div class="col text-center">
+                                        {{ address_form.city }}
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                    <div class="col text-left"> <label class="form-label"><strong>{{ address_form.state.label }} </strong></label></div>
+                                    <div class="col text-center">
+                                        {{ address_form.state }}
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                    <div class="col text-left"><label class="form-label"><strong>{{ address_form.landmark.label }} </strong></label></div>
+                                    <div class="col text-center">
+                                        {{ address_form.landmark }}
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                    <div class="col text-left"><label class="form-label"><strong>{{ address_form.alternate_mobile_number.label }} </strong></label></div>
+                                    <div class="col text-center">
+                                        {{ address_form.alternate_mobile_number }}
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                    <div class="col text-left"> <label class="form-label"><strong>{{ address_form.date.label }} </strong></label></div>
+                                    <div class="col text-center">
+                                        {{ address_form.date }}
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                    <div class="col text-left">  <label class="form-label"><strong>{{ address_form.time_slot.label }} </strong></label></div>
+                                    <div class="col text-center">
+                                        {{ address_form.time_slot }}
+                                    </div>
+                                </li>
+
+                            </ul>   
+
+
+                            <!-- <button type="submit" class="btn btn-primary mt-4">Next</button> -->
+                            
+                            {% if  existing_booking|length < 3  %}
+
+                                {% if existing_booking|length == 1 and existing_booking[0] == "Empty" %}
+                                <div class="btn  mt-2 buttons">
+                                    {{ address_form.check_availability }}
+                                </div> 
+                                {% else %}
+                                    <div class="alert alert-success p-1 m-2" role="alert" style="padding: 1rem ;color: #1f790b;">
+                                        Slot Available          
+                                    </div>
+                                    <div class="btn  mt-2 buttons">
+                                        {{ address_form.submit_address_form }}
+                                    </div>  
+                                {% endif %}
+
+                            
+                            
+                            
+                            {% else %}
+                                <div class="alert alert-warning p-1 m-2" role="alert" style="padding: 1rem ;color: #ff0f0f;">
+                                    Slot already booked. Please choose another slot.
+                                </div>
+                                
+
+                                <div class="btn  mt-2 buttons">
+                                    {{ address_form.check_availability }}
+                                </div>
+
+                            {% endif %}
+                        </form> 
+
+
+
+                    
+
+                    {% elif payment_form %}
+                
+                        <h3 class="text-center mb-4" style="color: black;">Payment Options</h3>
+
+                        <form method="POST">
+                            {{ payment_form.hidden_tag() }}
+
+                            <div >
+                                
+                                {% for subfield in form.payment_option %}
+                                    {{ subfield() }} {{ subfield.label }}
+                                    <br>
+                                {% endfor %}
+                            </div>
+                            <div class="btn  mt-4 buttons">
+                                {{ payment_form.submit_payment_form }}
+                            </div>
+                            
+        
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

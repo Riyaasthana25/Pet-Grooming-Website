@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block title %} Book Groomer {% endblock %}
+
+
+{% block body %}
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" ></script>
+
+
+    <script src="https://kit.fontawesome.com/e24507d923.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" />
+
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forms_book.css') }}">
+
+
+
+    <!-- Sign Up section start -->
+<style>
+    .f-t{
+    
+        text-align: center;
+    }
+
+</style>
+<section class="base" id="base-details">
+    <div class="base-content">
+        <div class="form f-t">
+            
+            <form method="POST">
+                {% if pet_form %}
+                    {{ pet_form.hidden_tag() }}
+                    {{ pet_form.pet_type.label }} {{ pet_form.pet_type }}
+                    {{ pet_form.breed.label }} {{ pet_form.breed }}
+                    {{ pet_form.gender.label }} {{ pet_form.gender }}
+                    {{ pet_form.size.label }} {{ pet_form.size }}
+                    {{ pet_form.aggression.label }} {{ pet_form.aggression }}
+                    {{ pet_form.age.label }} {{ pet_form.age }}
+                    {{ pet_form.submit }}
+                
+                {% elif address_form %}
+                
+                    {{ address_form.hidden_tag() }}
+                    {{ address_form.name.label }} {{ address_form.name }}
+                    {{ address_form.mobile_number.label }} {{ address_form.mobile_number }}
+                    {{ address_form.pincode.label }} {{ address_form.pincode }}
+                    {{ address_form.locality.label }} {{ address_form.locality }}
+                    {{ address_form.address.label }} {{ address_form.address }}
+                    {{ address_form.city.label }} {{ address_form.city }}
+                    {{ address_form.state.label }} {{ address_form.state }}
+                    {{ address_form.landmark.label }} {{ address_form.landmark }}
+                    {{ address_form.alternate_mobile_number.label }} {{ address_form.alternate_mobile_number }}
+                    {{ address_form.date.label }} {{ address_form.date }}
+                    {{ address_form.time_slot.label }} {{ address_form.time_slot }}
+                    {{ address_form.check_availability }}
+                    {{ address_form.submit }}
+                {% endif %}
+            </form>
+            
+            
+            
+            
+            <!-- <h3>
+                Create Account
+            </h3> -->
+            
+            <!-- <hr class="first">
+            <form method="POST">
+                {{ form.hidden_tag() }}
+
+                <div class="name">Name <br>{{ form.username }} <hr></div>
+                <div class="email">Email Address{{ form.email }} <hr> </div>
+                <div class="name">Mobile Number{{ form.mobile_number }} <hr> </div>
+                <div class="password">Password{{ form.password1 }} <hr></div>
+                <div class="password">Confirm Passowrd{{ form.password2 }} <hr></div>
+
+                <div class="buttons">
+                    
+                    {{ form.submit() }}
+                </div>
+                <div class="mt-4"><span>Already had a account?</span><a href="/login" style="text-decoration: none;">Login here</a></div>
+
+
+            </form> -->
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock %}

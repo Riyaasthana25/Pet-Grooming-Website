@@ -1,0 +1,253 @@
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+    .footer11{
+        font-family: 'poppins', sans-serif !important;
+        box-sizing: border-box;
+        background: linear-gradient(to right, #FFC374, #B67352);
+        color: black;
+        padding: 50px 0 10px;
+        border-top-left-radius: 125px;
+        font-size: 15px;
+        line-height: 20px;
+    }
+    
+    .row11{
+        width: 85% !important;
+        margin: auto !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: flex-start !important;
+        justify-content: space-between !important;
+    }
+    
+    .col11{
+        flex-basis: 25%;
+        padding: 5px;
+    }
+    
+    .col11:nth-child(2), .col11:nth-child(3){
+        flex-basis: 15px;
+    }
+
+    .logo11{
+        display: block;
+        margin: 0 auto;
+        width: 80px;
+        margin-bottom: 30px;
+    }
+    
+    .footer11 h3{
+        width: fit-content;
+        margin-bottom: 40px !important;
+        position: relative;
+        font-size: 1.2em !important;
+        font-weight: bold;
+        
+    }
+    
+    .footer11 p {
+        margin: 5px 0; 
+        line-height: 1.4; 
+    }
+    
+    .mail11{
+        width: fit-content;
+        border-bottom: 1px solid #ccc;
+        margin: 20px 0; 
+    }
+    
+    .footer11 ul li{
+        list-style: none;
+        margin-bottom: 12px;
+    }
+    
+    .footer11 ul li a{
+        text-decoration: none;
+        color: #fff;
+    }
+    
+    .footer11 form{
+        padding-bottom: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 50px;
+    }
+    
+    .footer11 form .far{
+        font-size: 18px;
+        margin-right: 10px;
+    }
+    
+    .footer11 form .input1{
+        width: 100%;
+        margin-left: 5px;
+        background: transparent;
+        color: #fff;
+        border: none;
+        outline: none;
+        cursor:default;
+    }
+    
+    .footer11 form button{
+        background: transparent;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+    }
+    
+    .footer11 form button .fas{
+        font-size: 16px;
+        color: #ccc;
+    }
+    
+    .social-media .fa-brands{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 40px;
+        font-size: 20px;
+        color: #000;
+        background: #fff;
+        margin-right: 15px;
+        cursor: pointer;
+    }
+    
+    .footer11 hr{
+        width: 90%;
+        border: 0;
+        border-bottom: 1px solid #ccc;
+        margin: 20px auto;
+    }
+    
+    .copyright11{
+        text-align: center;
+    }
+    
+    .under-line11{
+        width: 100%;
+        height: 5px;
+        background: #767676;
+        border-radius: 3px;
+        position: absolute;
+        top: 30px;
+        left: 0;
+        overflow: hidden;
+    }
+    
+    .under-line11 span{
+        width: 15px;
+        height: 100%;
+        background: #fff;
+        border-radius: 3px;
+        position: absolute;
+        top: 0;
+        left: 10px;
+        animation: moving 2s linear infinite;
+    }
+    
+    @keyframes moving {
+        0%{
+            left: -20px;
+        }
+        100%{
+            left: 100%;
+        }
+    }
+    
+    @media (max-width: 700px){
+        .footer11{
+            border: unset;
+        }
+        .col11{
+            flex-basis: 100%;
+        }
+        
+        .col11:nth-child(2), .col11:nth-child(3){
+            flex-basis: 100%;
+        }
+    }
+
+
+    .footer-links {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .footer-links li {
+        display: inline-block;
+        margin-right: 20px;
+    }
+    
+    .footer-links li:last-child {
+        margin-right: 0;
+    }
+</style>
+<script src="https://kit.fontawesome.com/611d6a91b1.js"></script>
+<footer class="footer11">
+    <div class="row11">
+        <!-- 1--> <div class="col11">
+            <img src="../static/images/icon_fc1.jpg" class="logo11">
+            <p>We specialize in personalized grooming services 
+                for your furry friends, ensuring a stress-free 
+                experience. Book an appointment today for a happy 
+                and pampered pet!"
+            </p>
+        </div>
+        <!-- 2--><div class="col11">
+            <h3 >Office <div class="under-line11"><span></span></div></h3>
+            <p>12/7 SAKET NAGAR</p>
+            <p>NEAR LUCKNOW STATION</p>
+            <p>LUCKNOW, UTTAR PRADESH</p>
+            <P>INDIA - 22XX01</P>
+            <p class="mail11" style="margin-top: 30px"> partner@furrcarepoint.in</p>
+            <h4  style="font-size: 15px; margin-top: 20px;font-weight: 700;">+91 - 895XXXX529</h4>
+        </div>
+        <!-- 3--><div class="col11">
+            <h3>Links <div class="under-line11 "><span></span></div></h3>
+            <ul class="footer-links">
+                <li><a href="javascript:void(0)" onclick="scrollToTop()">Home</a></li>
+                <li><a href="javascript:void(0)" onclick="scrollToSection('features')">Features</a></li>
+                <li><a href="javascript:void(0)" onclick="scrollToSection('grooming-packages')">Services</a></li>
+                <!-- <li><a href="">About Us</a></li>
+                <li><a href="">Contacts</a></li> -->
+            </ul>
+        </div>
+        <!-- 4--><div class="col11">
+            <h3>Newsletter <div class="under-line11"><span></span></div></h3>
+            <div class="input-container">
+                <form>
+                    <label for="groomer-input"><i class="fa-solid fa-user-tie"></i></label>
+                    <span class="input1"> Become a Groomer</span>
+                    <!-- <input type="text" id="groomer-input" value="Become a Groomer" required> -->
+                    <a href="https://docs.google.com/forms/d/1RQpMUArD4bZpaHVSegh4B1dpDo8HVfAHmhZ5-LDdwCM/viewform?pli=1&pli=1&edit_requested=true" target="blank"><i class="fa-solid fa-arrow-right"></i></a>
+                </form>
+            </div>
+            <div class="social-media">
+                <a href="https://www.instagram.com/furrcarepoint/" target="blank"><i class="fa-brands fa-instagram" style="font-weight: 700;"></i></a>
+                <a href="https://wa.me/895XXXX529" target="blank"><i class="fa-brands fa-whatsapp" style="font-weight: 700;"></i></a>
+                <a href="http://www.youtube.com/@Furrcarepoint" target="blank"><i class="fa-brands fa-youtube"></i></a>
+                <!-- <i class="fa-brands fa-facebook"></i> -->
+                <a href="https://twitter.com/furrcarepoint" target="blank"><i class="fa-brands fa-twitter" ></i></a>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <p class="copyright11">furrcarepoint © 2024- All Rights Reserved</p>
+</footer>
+<script>
+    function scrollToTop() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
+    function scrollToSection(sectionId) {
+        var section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({behavior: 'smooth'});
+        }
+    }
+    </script>
+  

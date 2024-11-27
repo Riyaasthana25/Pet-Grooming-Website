@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %} Add Available Slot {% endblock %}
+
+
+{% block body %}
+<style>
+    .cont2 {
+        font-family: Arial, sans-serif;
+        margin: 10px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        
+    }
+
+    section  form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        max-width: 600px;
+    }
+
+    .name, .picture, .buts {
+        margin-bottom: 15px;
+    }
+
+    .name, .picture, .buts input[type="submit"],desc1 {
+        width: 100%;
+    }
+
+    section input[type="text"], input[type="number"], input[type="file"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: calc(100% - 22px);
+        margin-top: 5px;
+    }
+
+    section input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    section input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    @media only screen and (max-width: 800px) {
+        form {
+            width: 90%;
+        }
+    }
+</style>
+
+<section class="cont1">
+
+<div class="cont2">
+
+<form action="" method="POST", enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+
+    <div class="name">Date {{ form.date }} </div>
+    <div class="name desc1">Time <br> {{ form.time_slot }} </div>
+    <div class="name">Available number of slot{{ form.available_bookings}}  </div>
+
+    <div class="buts">
+        {{ form.submit() }}
+    </div>
+</form>
+</div>
+</section>
+
+
+{% endblock %}

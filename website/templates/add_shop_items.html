@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% block title %} Add Shop Items {% endblock %}
+
+
+{% block body %}
+<style>
+    .cont2 {
+        font-family: Arial, sans-serif;
+        margin: 10px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        
+    }
+
+    section  form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        max-width: 600px;
+    }
+
+    .name, .picture, .buts {
+        margin-bottom: 15px;
+    }
+
+    .name, .picture, .buts input[type="submit"],desc1 {
+        width: 100%;
+    }
+
+    section input[type="text"], input[type="number"], input[type="file"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: calc(100% - 22px);
+        margin-top: 5px;
+    }
+
+    section input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    section input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    @media only screen and (max-width: 800px) {
+        form {
+            width: 90%;
+        }
+    }
+</style>
+
+<section class="cont1">
+
+<div class="cont2">
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div>Pet Type {{form.pet_type}}</div>
+        <div class="name">Product Name {{ form.product_name }}</div>
+        <div class="name desc1">
+            Product Details <br>
+            <div id="description-fields">
+                {% for description_field in form.descriptions %}
+                    {{ description_field }}
+                {% endfor %}
+            </div>
+            <button id="add-description" type="button" class="btn btn-warning" style="margin-top: 10px;">Add Description</button>
+        </div>
+        <div class="name">Previous Price{{ form.previous_price }}</div>
+        <div class="name">Current Price{{ form.current_price }}</div>
+        <div class="name">Discount{{ form.discount }}%</div>
+        <div class="name">In Stock{{ form.in_stock }}</div>
+        <div class="picture">Picture{{ form.product_picture }}</div>
+        <div class="name">{{ form.flash_sale }} Flash Sale</div>
+    
+        <div class="buts">
+            {{ form.add_product() }}
+        </div>
+    </form>
+</div>
+</section>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var descriptionIndex = 0; // Initialize index counter
+
+        $('#add-description').click(function() {
+            var newDescriptionField = '<input type="text" name="descriptions-' + descriptionIndex + '">';
+            $('#description-fields').append(newDescriptionField);
+            descriptionIndex++; // Increment index counter
+        });
+    });
+</script>
+
+{% endblock %}

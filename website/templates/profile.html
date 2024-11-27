@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %} Profile {% endblock %}
+
+
+{% block body %}
+
+<div class="container my-5">
+    <div class="row">
+        <h3 style="color: rgb(46, 34, 34);">Hi, <span class="text-capitalize">{{ customer.username }}</span></h3>
+        
+        
+        
+        <div class=" col-sm-4  offset-sm-0" style="background-color: #eec1aa; border-radius: 12px; margin-top: 20px;">
+            <!-- <div class="col-sm-10 border-end" style="margin-top: 20px; color:black"></div>  -->
+            <div class="boder-end row ">
+
+                <div class="col-sm-8">
+                    <!-- <div class="card m-2 p-3"> -->
+
+                        <!-- <h4><p>{{ customer.username }}</p></h4> -->
+                        <h4>Email:<span style="color:midnightblue;"> {{ customer.email }}</span></h4>
+                        <h4>Mobile Number: <span style="color:midnightblue ;">+91{{customer.mobile_number}}</span></h4>
+                    <!-- </div> -->
+                </div>
+
+            </div>
+        
+        </div>
+
+        <div class="col-sm-2 offset-sm-6" style="margin-top: 20px;">
+            <ul class="list-unstyled">
+                <li class="d-grid">
+                    <a href="/change-password/{{ customer.id }}" class="btn btn-primary" style="margin-top: 5px;">Change Password</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

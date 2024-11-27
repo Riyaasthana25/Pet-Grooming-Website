@@ -1,0 +1,21 @@
+create virtual environment
+python -m venv venv
+.\venv\Scripts\Activate
+
+agr nhi bna to ye niche valen dono
+Set-ExecutionPolicy RemoteSigned -Scope Process
+.\.venv\Scripts\Activate
+
+aur abhi nhi chla to ye vala 
+    .\venv\Scripts\Activate.ps1
+abhi bhi nhi to use this 
+    Set-ExecutionPolicy RemoteSigned -Scope Process
+
+
+
+ye sab install kr lena phirr chal jayega
+python -m pip install Flask-Login
+
+python -m  pip install Flask-SQLAlchemy Flask-Login
+
+pip install pytz

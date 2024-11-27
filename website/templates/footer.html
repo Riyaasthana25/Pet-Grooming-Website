@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>footer element</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://kit.fontawesome.com/611d6a91b1.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'poppins', sans-serif;
+            box-sizing: border-box;
+        }
+        body{
+            background: white;
+        }
+        
+        footer{
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            background: linear-gradient(to right, #FFC374, #B67352);
+            color: black;
+            padding: 100px 0 30px;
+            border-top-left-radius: 125px;
+            font-size: 15px;
+            line-height: 20px;
+        }
+        
+        .row{
+            width: 85%;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+        
+        .col{
+            flex-basis: 25%;
+            padding: 10px;
+        }
+        
+        .col:nth-child(2), .col:nth-child(3){
+            flex-basis: 15px;
+        }
+        
+        .logo{
+            width: 60px;
+            margin-bottom: 30px;
+        }
+        
+        .col h3{
+            width: fit-content;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .mail{
+            width: fit-content;
+            border-bottom: 1px solid #ccc;
+            margin: 20px 0; 
+        }
+        
+        ul li{
+            list-style: none;
+            margin-bottom: 12px;
+        }
+        
+        ul li a{
+            text-decoration: none;
+            color: #fff;
+        }
+        
+        form{
+            padding-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 50px;
+        }
+        
+        form .far{
+            font-size: 18px;
+            margin-right: 10px;
+        }
+        
+        form input{
+            width: 100%;
+            background: transparent;
+            color: #ccc;
+            border: none;
+            outline: none;
+        }
+        
+        form button{
+            background: transparent;
+            border: 0;
+            outline: none;
+            cursor: pointer;
+        }
+        
+        form button .fas{
+            font-size: 16px;
+            color: #ccc;
+        }
+        
+        .social-media .fa-brands{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-size: 20px;
+            color: #000;
+            background: #fff;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        
+        hr{
+            width: 90%;
+            border: 0;
+            border-bottom: 1px solid #ccc;
+            margin: 20px auto;
+        }
+        
+        .copyright{
+            text-align: center;
+        }
+        
+        .under-line{
+            width: 100%;
+            height: 5px;
+            background: #767676;
+            border-radius: 3px;
+            position: absolute;
+            top: 25px;
+            left: 0;
+            overflow: hidden;
+        }
+        
+        .under-line span{
+            width: 15px;
+            height: 100%;
+            background: #fff;
+            border-radius: 3px;
+            position: absolute;
+            top: 0;
+            left: 10px;
+            animation: moving 2s linear infinite;
+        }
+        
+        @keyframes moving {
+            0%{
+                left: -20px;
+            }
+            100%{
+                left: 100%;
+            }
+        }
+        
+        @media (max-width: 700px){
+            footer{
+                border: unset;
+            }
+            .col{
+                flex-basis: 100%;
+            }
+            
+            .col:nth-child(2), .col:nth-child(3){
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    {% block footer %}
+    <footer>
+        <div class="row">
+            <!-- 1--> <div class="col">
+                <img src="FURRCARE_LOGO.png" class="logo">
+                <p>We specialize in personalized grooming services 
+                    for your furry friends, ensuring a stress-free 
+                    experience. Book an appointment today for a happy 
+                    and pampered pet!"
+                </p>
+            </div>
+            <!-- 2--><div class="col">
+                <h3>Office <div class="under-line"><span></span></div></h3>
+                <p>42/97</p>
+                
+            <p>NEAR LUCKNOW STATION</p>
+            <p>LUCKNOW, UTTAR PRADESH</p>
+            <P>INDIA - 22XX01</P>
+                <p class="mail"> connect@furrcarepoint.com</p>
+                <h4>+91 - 936XXXX324</h4>
+            </div>
+            <!-- 3--><div class="col">
+                <h3>Links <div class="under-line"><span></span></div></h3>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Features</a></li>
+                    <li><a href="">Contacts</a></li>
+                </ul>
+            </div>
+            <!-- 4--><div class="col">
+                <h3>Newsletter <div class="under-line"><span></span></div></h3>
+                <form>
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" placeholder="Enter your email id" required>
+                    <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+                </form>
+                <div class="social-media">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">furrcarepoint © 2024- All Rights Reserved</p>
+    </footer>
+    {% endblock %}
+</body>
+</html>

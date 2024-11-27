@@ -1,0 +1,320 @@
+{% extends 'base.html' %}
+
+{% block title %}Order Details {% endblock %}
+
+
+{% block body %}
+
+<style>
+    .buttons {
+        margin-top: 10px;
+        margin-left: 10px;
+        font-size: 20px;
+        font-family: cursive;   
+        padding: 2px 20px;
+        text-decoration: none;
+        color: #fff;
+        background:#ec8530;
+        border: 2px solid #ec8530;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+    .buttons:hover{
+        background:#b35203;
+        border: 2px solid #b35203;
+    }
+
+    .list-group-item .col {
+        display: flex;
+        align-items: center;
+    }
+    
+    .list-group-item .text-center {
+        text-align: center;
+    }
+    
+    .list-group-item .text-left {
+        text-align: left;
+    }
+
+       
+</style>
+
+<div class="container my-8 ">
+    <div class="row justify-content-center">
+    
+
+        <h1 class="text-center mb-4 mt-3" style="color: black;">Order Details</h1>
+        <div class="col-sm-8 mt-4">
+            <div class="card mx-auto">
+                <div class="card-body text-center">
+                    
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col justify-content-center">
+                            <img src=".{{ order.product.product_picture }}" alt="" style="height: 100px; width: 150px; border-radius: 10px; border: 2px solid black;">
+                        </div>
+                    </li>
+
+
+
+
+
+
+                    <hr>
+                    <h3 class="text-center mb-4" style="color: brown;font-size:25px;">Date & Time </h3>
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Date:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.date }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Time:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.time_slot }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Order Date:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.order_date}}
+                        </div>
+                    </li>
+
+
+
+
+
+
+                    <hr>
+                    <h3 class="text-center mb-4" style="color: brown;font-size:25px;">Customer </h3>
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Name:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.name }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Mobile Number:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.mobile_number }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Alternate Mobile Number:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.alternate_mobile_number }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Address:</strong></label></div>
+                        <div class="col text-center">
+                            <span>{{ order.address }}</span>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong></strong></label></div>
+                        <div class="col text-center">
+                            <span>{{order.locality}}, {{order.city}}, {{order.state}}-{{order.pincode}}</span>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Landmark:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.landmark }}
+                        </div>
+                    </li>
+
+
+
+
+
+                    <hr>
+                    <h3 class="text-center mb-4" style="color: brown;font-size:25px;">Pet</h3>
+                    
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Type of Pet:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.pet_type }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Breed:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.breed }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Gender:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.gender }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Age:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.age }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Size:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.size }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Aggression:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.aggression }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Vaccinated:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.vaccinated  }}
+                        </div>
+                    </li>
+
+
+
+
+
+
+
+
+                    <hr>
+                    <h3 class="text-center mb-4" style="color: brown;font-size:25px;">Pack </h3>                    
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Pack:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.product.product_name }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Price:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.price }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Quantity:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.quantity }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Payment:</strong></label></div>
+                        <div class="col text-center">
+                            {{ order.payment_id }}
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"> <label class="form-label"><strong>Order Status:</strong></label></div>
+                        <div class="col text-center">
+                            
+                            {% if order.status == 'Booking Confirm' %}
+                                <div style="color: #ec8530;">{{ order.status }}</div>
+
+                            {% elif order.status == 'Completed' %}
+                                <div style="color: rgb(9, 243, 9);">{{ order.status }}</div>
+
+                            {% elif order.status == 'Canceled' %}
+                                <div style="color: rgb(238, 48, 48);">{{ order.status }}</div>
+                            {% endif %}
+                        </div>
+                    </li>
+                    {% if order.status == 'Booking Confirm' %}
+                    <li class="list-group-item d-flex justify-content-center align-items-center border-0 px-0 pb-0">
+                        <div class="col text-left"></div>
+                        <div class="col text-center">
+                            <button id="cancel-order-btn" class="btn btn-danger" onclick="cancelOrder()">Cancel Order</button>
+                        </div>
+                    </li>
+                    {% endif %}
+
+                    <script>
+                        function cancelOrder() {
+                            if (confirm("Are you sure you want to cancel this order?")) {
+                                // If user confirms cancelation
+                                $.ajax({
+                                    type: "POST",
+                                    url: "/cancel-order/{{ order.id }}", // Replace with your Flask route
+                                    data: {}, // You can pass additional data if needed
+                                    success: function(response) {
+                                        // Reload the page or update the order status display
+                                        window.location.reload(); // Reload the page
+                                    },
+                                    error: function(xhr, status, error) {
+                                        console.error(xhr.responseText);
+                                        // Handle error
+                                    }
+                                });
+                            } else {
+                                // If user cancels the action
+                                return false;
+                            }
+                        }
+                    </script>
+                    
+
+                    
+
+                    
+                    
+
+<style>
+    .buttons {
+
+        font-size: 18px;
+        margin-left: 0px;
+        padding: 2px 3px; 
+        font-family: cursive;   
+        text-decoration: none;
+        color: #fff;
+        background:#ec8530;
+        border: 2px solid #ec8530;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+    .buttons:hover{
+        background:#b35203;
+        border: 2px solid #b35203;
+    }
+
+</style>
+
+
+                        <!-- <h3 class="text-center mb-4" style="color: black;">Pet Details</h3> -->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}
