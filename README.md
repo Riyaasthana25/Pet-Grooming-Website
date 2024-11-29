@@ -1,15 +1,15 @@
 Pet-Grooming-Website
 
-FurrCare Point is a comprehensive pet grooming website designed to cater to the needs of pet owners and administrators. It offers a seamless experience for customers to explore and purchase grooming packages for their beloved cats and dogs while empowering the admin with robust management tools.
+FurrCare Point is a comprehensive pet grooming website designed to cater the needs of pet owners and administrators. It offers a seamless experience for customers to explore and purchase grooming packages for their beloved pets while empowering the admin with robust management tools.
 
-Features
+Features:
 Customer Features
-Browse Grooming Packages: Customers can explore a variety of grooming packages tailored for dogs and cats.
+Browse Grooming Packages: Customers can explore a variety of grooming packages tailored for pets.
 E-Commerce Functionality:
-  Add packages to the cart.
-	Place orders for selected packages.
-	Book available slot for grooming as per their chooice.
-	Track the status of placed orders.
+        - Add packages to the cart.
+	- Place orders for selected packages.
+	- Book available slot for grooming as per their chooice.
+	- Track the status of placed orders.
 User-Friendly Interface: Designed for an intuitive experience, ensuring customers can easily navigate and make booking.
 
 Admin Features
