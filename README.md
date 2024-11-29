@@ -7,7 +7,7 @@ Customer Features
 Browse Grooming Packages: Customers can explore a variety of grooming packages tailored for pets.
 E-Commerce Functionality:
 
-        - Add packages to the cart.
+	- Add packages to the cart.
 	
 	- Place orders for selected packages.
  
