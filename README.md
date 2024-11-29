@@ -6,9 +6,13 @@ Features:
 Customer Features
 Browse Grooming Packages: Customers can explore a variety of grooming packages tailored for pets.
 E-Commerce Functionality:
+
         - Add packages to the cart.
+	
 	- Place orders for selected packages.
+ 
 	- Book available slot for grooming as per their chooice.
+ 
 	- Track the status of placed orders.
  
 User-Friendly Interface: Designed for an intuitive experience, ensuring customers can easily navigate and make booking.
