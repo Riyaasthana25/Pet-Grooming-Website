@@ -10,6 +10,7 @@ E-Commerce Functionality:
 	- Place orders for selected packages.
 	- Book available slot for grooming as per their chooice.
 	- Track the status of placed orders.
+ 
 User-Friendly Interface: Designed for an intuitive experience, ensuring customers can easily navigate and make booking.
 
 Admin Features
